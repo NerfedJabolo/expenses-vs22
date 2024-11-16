@@ -1,6 +1,7 @@
 import ExpenseItem from "./ExpenseItem";
 import './Expenses.css'
 import Card from './Card'
+import ExpensesFilter from "./Expenses/ExpensesFilter";
 
 function Expenses(props) {
     const expenses = [
@@ -18,6 +19,7 @@ function Expenses(props) {
 
     return (
         <Card className="expenses">
+            <ExpensesFilter />
             {/* <ExpenseItem expenseData={expenses[0]}></ExpenseItem>
             <ExpenseItem expenseData={expenses[1]}></ExpenseItem> */}
             {expenses.map(expense => {
