@@ -2,8 +2,12 @@ import ExpenseItem from "./ExpenseItem";
 import './Expenses.css'
 import Card from './Card'
 import ExpensesFilter from "./Expenses/ExpensesFilter";
+import { useState } from "react";
 
 function Expenses(props) {
+    const [filterYear, setFilterYear] = useState(2024)
+
+    console.log('Year data in Expenses.js ',filterYear)
     const expenses = [
         {
             date: new Date(2023, 0, 10),
@@ -19,7 +23,7 @@ function Expenses(props) {
 
     return (
         <Card className="expenses">
-            <ExpensesFilter />
+            <ExpensesFilter year={setFilterYear} />
             {/* <ExpenseItem expenseData={expenses[0]}></ExpenseItem>
             <ExpenseItem expenseData={expenses[1]}></ExpenseItem> */}
             {expenses.map(expense => {
